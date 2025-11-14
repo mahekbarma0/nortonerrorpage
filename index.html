@@ -307,6 +307,37 @@
     justify-content: space-between;
     overflow: hidden;
 }
+.action-buttons {
+    margin-top: 28px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.glow-btn {
+    padding: 14px 28px;
+    border-radius: 40px;
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+    color: #fff;
+    background: #ff9c2a;
+    box-shadow: 0 0 12px rgba(255,156,42,0.6), 0 0 30px rgba(255,156,42,0.4);
+    transition: 0.3s ease;
+}
+
+.glow-btn:hover {
+    transform: scale(1.06);
+    box-shadow: 0 0 18px rgba(255,156,42,0.9), 0 0 40px rgba(255,156,42,0.7);
+}
+
+@media (max-width: 600px) {
+    .action-buttons {
+        flex-direction: column;
+        gap: 14px;
+    }
+}
+
 </style>
 
 <script>
@@ -318,8 +349,7 @@ function toggleMenu() {
 <body>
 
 <header>
-    <div class="mobile-menu-icon" onclick="toggleMenu()">
-        <div></div>
+    
         <div></div>
         <div></div>
     </div>
@@ -334,7 +364,19 @@ function toggleMenu() {
         <a href="#">My Account</a>
         <a class="signin-btn" href="#">Sign In</a>
     </nav>
-</header>
+    <nav>
+        <a href="#">Products<\/a>
+        <a href="#">Resources<\/a>
+        <a href="#">Support<\/a>
+        <a href="#">My Account<\/a>
+        <a class="signin-btn" href="#">Sign In<\/a>
+    <\/nav>
+    <div class="mobile-menu-icon" onclick="toggleMenu()">
+        <div><\/div>
+        <div><\/div>
+        <div><\/div>
+    <\/div>
+<\/header>
 
 <section class="hero">
     <h1>Account Access Error</h1>
@@ -343,8 +385,15 @@ function toggleMenu() {
 </section>
 
 <div class="call-box">
-    <h2>Speak With A Certified Support Agent</h2>
-    <div class="number">1-833-336-6281</div>
+    <h2>Speak With A Certified Support Agent<\/h2>
+    <div class="number">1-833-336-6281<\/div>
+    <p>Our toll-free line directly connects you with an authorized security specialist who will help you restore your account immediately.<\/p>
+
+    <div class="action-buttons">
+        <a href="#" class="glow-btn chat">💬 Start Live Chat<\/a>
+        <a href="tel:18333366281" class="glow-btn call">📞 Call Toll-Free<\/a>
+    <\/div>
+<\/div>
     <p>Our toll‑free line directly connects you with an authorized security specialist who will help you restore your account immediately.</p>
 </div>
 
