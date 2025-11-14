@@ -184,13 +184,17 @@
         }
         /* MOBILE RESPONSIVE FIXES */
         @media (max-width: 600px) {
+            .mobile-menu-icon {
+                display: flex;
+            }
             header {
                 padding: 16px 20px;
             }
 
             nav {
-                display: none;
-            }
+            display: flex;
+            align-items: center;
+        }
 
             .hero {
                 padding: 90px 20px 80px;
@@ -241,11 +245,69 @@
                 font-size: 14px;
             }
         }
+        /* HAMBURGER MENU */
+        .mobile-menu-icon {
+            width: 34px;
+            height: 26px;
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+            z-index: 1100;
+        }
+
+        .mobile-menu-icon div {
+            width: 100%;
+            height: 4px;
+            background: #333;
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+
+        nav {
+            transition: 0.3s ease;
+        }
+
+        @media (max-width: 600px) {
+            nav {
+                display: block;
+                position: fixed;
+                top: 0;
+                right: -100%;
+                height: 100vh;
+                width: 70%;
+                background: white;
+                padding: 80px 30px;
+                box-shadow: -4px 0 20px rgba(0,0,0,0.1);
+                transition: 0.3s ease;
+            }
+
+            nav.open {
+                right: 0;
+            }
+
+            nav a {
+                display: block;
+                margin: 25px 0;
+                font-size: 18px;
+            }
+        }
     </style>
+
+<script>
+function toggleMenu() {
+    document.querySelector('nav').classList.toggle('open');
+}
+</script>
 </head>
 <body>
 
 <header>
+    <div class="mobile-menu-icon" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
     <div class="brand">
         <img src="images/logo.png">
         <h2>Antivirus Security</h2>
