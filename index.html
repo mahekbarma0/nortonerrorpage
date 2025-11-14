@@ -292,6 +292,10 @@
                 font-size: 18px;
             }
         }
+        .logo {
+    transform: scale(1.4); /* 1 = original, 1.4 = bigger from all sides */
+    transform-origin: center;
+}
     </style>
 
 <script>
@@ -309,8 +313,7 @@ function toggleMenu() {
         <div></div>
     </div>
     <div class="brand">
-        <img src="images/logo.png">
-        <h2>Antivirus Security</h2>
+        <img src="images/logo.png" class="logo">
     </div>
     <nav>
         <a href="#">Products</a>
