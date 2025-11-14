@@ -267,6 +267,10 @@
         nav {
             transition: 0.3s ease;
         }
+        .logo {
+    transform: scale(1.4);
+    transform-origin: center;
+}
 
         @media (max-width: 600px) {
             nav {
@@ -292,11 +296,18 @@
                 font-size: 18px;
             }
         }
-        .logo {
-    transform: scale(1.4); /* 1 = original, 1.4 = bigger from all sides */
-    transform-origin: center;
-}
-    </style>
+      html, body {
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  main {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+</style>
 
 <script>
 function toggleMenu() {
