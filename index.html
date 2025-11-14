@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Security Alert - Antivirus System</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+
+        body {
+            background: #f4f6fb;
+            color: #2e2e2e;
+        }
+
+        /* HEADER */
+        header {
+            width: 100%;
+            padding: 22px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255,255,255,0.8);
+            backdrop-filter: blur(14px);
+            box-shadow: 0 4px 30px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .brand img {
+            height: 50px;
+            filter: drop-shadow(0 3px 4px rgba(0,0,0,0.15));
+        }
+
+        .brand h2 {
+            font-weight: 800;
+            font-size: 22px;
+            color: #1a1a1a;
+        }
+
+        nav a {
+            margin-left: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            color: #444;
+            transition: 0.3s;
+        }
+
+        nav a:hover { color: #ff9800; }
+
+        nav .signin-btn {
+            background: #ffc342;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 700;
+            box-shadow: 0 4px 10px rgba(255,195,66,0.4);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            padding: 120px 20px 110px;
+            background: linear-gradient(135deg, #ffb948 0%, #ff9c2a 50%, #ff8a00 100%);
+            text-align: center;
+            color: white;
+            box-shadow: inset 0 0 120px rgba(0,0,0,0.2);
+        }
+
+        .hero h1 {
+            font-size: 58px;
+            font-weight: 800;
+            text-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            letter-spacing: -1px;
+            animation: fadeDown 1s ease;
+        }
+
+        .hero .code {
+            font-size: 34px;
+            margin-top: 20px;
+            font-weight: 700;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            animation: popIn 1.3s ease;
+        }
+
+        .hero .sub {
+            font-size: 22px;
+            margin-top: 25px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+            opacity: 0.95;
+            animation: fadeUp 1.4s ease;
+        }
+
+        /* CALL CARD */
+        .call-box {
+            background: white;
+            margin: -60px auto 50px;
+            max-width: 780px;
+            padding: 40px;
+            border-radius: 24px;
+            box-shadow: 0 14px 40px rgba(0,0,0,0.1);
+            text-align: center;
+            animation: fadeUp 1.6s ease;
+        }
+
+        .call-box h2 { font-size: 28px; font-weight: 700; }
+
+        .call-box .number {
+            font-size: 42px;
+            font-weight: 900;
+            color: #d33f0f;
+            margin: 25px 0;
+            text-shadow: 0 4px 16px rgba(211,63,15,0.45);
+            animation: pulse 2s infinite;
+        }
+
+        .call-box p {
+            font-size: 17px;
+            color: #555;
+        }
+
+        /* SECTIONS */
+        .sections {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            padding: 70px;
+            gap: 40px;
+        }
+
+        .card {
+            background: white;
+            padding: 40px 35px;
+            border-radius: 26px;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+            transition: 0.35s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+        }
+
+        .card h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 18px;
+            color: #1a1a1a;
+        }
+
+        .card p { color: #555; font-size: 16px; line-height: 1.6; }
+
+        footer {
+            background: #151515;
+            color: #888;
+            text-align: center;
+            padding: 45px 20px;
+            margin-top: 50px;
+            font-size: 15px;
+        }
+
+        /* ANIMATIONS */
+        @keyframes fadeDown { from {opacity: 0; transform: translateY(-20px);} to {opacity: 1; transform: translateY(0);} }
+        @keyframes fadeUp { from {opacity: 0; transform: translateY(20px);} to {opacity: 1; transform: translateY(0);} }
+        @keyframes popIn { from {opacity: 0; transform: scale(0.9);} to {opacity: 1; transform: scale(1);} }
+        @keyframes pulse { 0%,100% {transform: scale(1);} 50% {transform: scale(1.08);} }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 40px; }
+            .hero .code { font-size: 28px; }
+            .call-box .number { font-size: 34px; }
+        }
+        /* MOBILE RESPONSIVE FIXES */
+        @media (max-width: 600px) {
+            header {
+                padding: 16px 20px;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .hero {
+                padding: 90px 20px 80px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+                line-height: 1.25;
+            }
+
+            .hero .code {
+                font-size: 22px;
+            }
+
+            .hero .sub {
+                font-size: 16px;
+                max-width: 90%;
+            }
+
+            .call-box {
+                margin: -40px 15px 30px;
+                padding: 28px 20px;
+            }
+
+            .call-box h2 {
+                font-size: 20px;
+            }
+
+            .call-box .number {
+                font-size: 28px;
+            }
+
+            .sections {
+                padding: 30px 20px;
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .card {
+                padding: 28px 22px;
+            }
+
+            .card h3 { font-size: 20px; }
+            .card p { font-size: 15px; }
+
+            footer {
+                padding: 30px 15px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="brand">
+        <img src="https://i.ibb.co/tZHsC2L/shield-logo.png">
+        <h2>Antivirus Security</h2>
+    </div>
+    <nav>
+        <a href="#">Products</a>
+        <a href="#">Resources</a>
+        <a href="#">Support</a>
+        <a href="#">My Account</a>
+        <a class="signin-btn" href="#">Sign In</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Account Access Error</h1>
+    <p class="code">kb19867605223793EN</p>
+    <p class="sub">Your account has been suspended due to unusual activity. Immediate identity verification is required to restore full access.</p>
+</section>
+
+<div class="call-box">
+    <h2>Speak With A Certified Support Agent</h2>
+    <div class="number">1-833-336-6281</div>
+    <p>Our toll‑free line directly connects you with an authorized security specialist who will help you restore your account immediately.</p>
+</div>
+
+<section class="sections">
+    <div class="card">
+        <h3>AI Security Assistant</h3>
+        <p>Intelligent diagnostic engine that scans and resolves common account and security issues instantly.</p>
+    </div>
+
+    <div class="card">
+        <h3>Knowledge Center</h3>
+        <p>Advanced FAQ database with guided results and automated troubleshooting solutions.</p>
+    </div>
+
+    <div class="card">
+        <h3>Authorized Remote Help</h3>
+        <p>Certified technicians available to assist and restore your services securely, in real‑time.</p>
+    </div>
+</section>
+
+<footer>
+    © 2025 Antivirus Security • All Rights Reserved
+</footer>
+
+</body>
+</html>
